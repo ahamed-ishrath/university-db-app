@@ -28,5 +28,5 @@ public class Student {
     private String fullName; 
   
     @Column(name = "email", nullable = false, unique = true, length = 100) 
-    private String email; 
+    private String email;
 } 
