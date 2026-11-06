@@ -1,4 +1,4 @@
-package com.example.universitydb.controller; 
+package com.example.universitydb.controller;
   
 import com.example.universitydb.dto.CourseCountDto; 
 import com.example.universitydb.dto.CourseDto; 
@@ -48,7 +48,6 @@ public class UniversityController {
                 .map(s -> ResponseEntity.ok(StudentDto.from(s))) 
                 .orElse(ResponseEntity.notFound().build()); 
     } 
-26 
   
     @GetMapping("/students/{code}/enrollments") 
     public List<EnrollmentDto> studentEnrollments(@PathVariable String code) { 
@@ -101,6 +100,5 @@ ResponseEntity.ok(d.getLecturers().stream().map(LecturerDto::from).toList()))
     public List<CourseCountDto> courseCounts() { 
         return enrollmentRepository.countStudentsPerCourse() 
                 .stream().map(CourseCountDto::from).toList(); 
-27 
     } 
 } 
